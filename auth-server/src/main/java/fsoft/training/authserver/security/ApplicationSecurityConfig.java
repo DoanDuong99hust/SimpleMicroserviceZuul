@@ -1,8 +1,8 @@
 package fsoft.training.authserver.security;
 
+import fsoft.training.authserver.auth.ApplicationUserService;
 import fsoft.training.authserver.jwt.JwtConfig;
 import fsoft.training.authserver.jwt.JwtUsernameAndPasswordAuthenticationFilter;
-import fsoft.training.authserver.service.ApplicationUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

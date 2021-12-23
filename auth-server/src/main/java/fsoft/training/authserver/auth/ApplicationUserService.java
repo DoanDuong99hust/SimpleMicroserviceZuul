@@ -1,5 +1,6 @@
-package fsoft.training.authserver.service;
+package fsoft.training.authserver.auth;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -8,8 +9,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ApplicationUserService implements UserDetailsService {
+
     private final ApplicationUserDAO applicationUserDAO;
 
+    @Autowired
     public ApplicationUserService(@Qualifier("fake") ApplicationUserDAO applicationUserDAO) {
         this.applicationUserDAO = applicationUserDAO;
     }
@@ -21,6 +24,4 @@ public class ApplicationUserService implements UserDetailsService {
                 .orElseThrow(() ->
                         new UsernameNotFoundException(String.format("Username %s not found", username)));
     }
-
-
 }

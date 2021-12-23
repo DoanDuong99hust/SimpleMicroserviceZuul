@@ -1,4 +1,4 @@
-package fsoft.training.authserver.service;
+package fsoft.training.authserver.auth;
 
 import java.util.Optional;
 
